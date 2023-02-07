@@ -27,7 +27,6 @@ function sortLibrary () {
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   });
 }
-
 sortLibrary();
 
 console.log(cloneLibrary);
@@ -45,10 +44,10 @@ function setCoverColor(book){
 
 // Assign title and author
 let populateLibrary = function populate (author, title) {
-
-  for (let i = 0; i < myLibrary.length; i += 1){
-    authors[i].textContent = myLibrary[i].author;
-    titles[i].textContent = myLibrary[i].title;
+  sortLibrary();
+  for (let i = 0; i < cloneLibrary.length; i += 1){
+    authors[i].textContent = cloneLibrary[i].author;
+    titles[i].textContent = cloneLibrary[i].title;
   };
 };
 populateLibrary();
