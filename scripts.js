@@ -16,20 +16,27 @@ const myLibrary = [
   {title: 'All the Light We Cannot See', author: 'Doerr'},
 ];
 
-let cloneLibrary = [...myLibrary];
+let cloneLibrary = function cloneLibrary (){
+  return libClone = [...myLibrary];
+};
 
 // Sort copy of Library array by Author last name;
 
 function sortLibrary () {
-  cloneLibrary.sort(function(a, b) {
+  cloneLibrary();
+  libClone.sort(function(a, b) {
     var textA = a.author.toUpperCase();
     var textB = b.author.toUpperCase();
-    return (textA < textB) ? -1 : 1;
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
   });
 }
-sortLibrary();
 
-console.log(cloneLibrary);
+newBook1 = {title: 'Yes1', author: 'Me1'};
+newBook2 = {title: 'Yes2', author: 'Me2'};
+newBook3 = {title: 'Yes3', author: 'Me3'};
+newBook4 = {title: 'Yes4', author: 'Me4'};
+newBook5 = {title: 'Yes5', author: 'Me5'};
+
 
 coverColors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(156, 100, 0)", "rgb(150, 150, 0)", "rgb(0, 150, 150)"];
 
@@ -44,9 +51,9 @@ let setCoverColor = function setCoverColors(){
 
 let populateBookCase = function populate (author, title) {
   sortLibrary(); // Clone myLibrary and sort/ manipulate it.
-  for (let i = 0; i < cloneLibrary.length; i += 1){
-    authors[i].textContent = cloneLibrary[i].author;
-    titles[i].textContent = cloneLibrary[i].title;
+  for (let i = 0; i < libClone.length; i += 1){
+    authors[i].textContent = libClone[i].author;
+    titles[i].textContent = libClone[i].title;
   };
   setCoverColor();
 };
