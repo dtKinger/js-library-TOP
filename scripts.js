@@ -24,7 +24,7 @@ function sortLibrary () {
   cloneLibrary.sort(function(a, b) {
     var textA = a.author.toUpperCase();
     var textB = b.author.toUpperCase();
-    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+    return (textA < textB) ? -1 : 1;
   });
 }
 sortLibrary();
@@ -34,23 +34,23 @@ console.log(cloneLibrary);
 coverColors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(156, 100, 0)", "rgb(150, 150, 0)", "rgb(0, 150, 150)"];
 
 // Populate bookshelf
-
-// Call this function when adding an item to the library
-books.forEach(setCoverColor);
-function setCoverColor(book){
-  let coverChoice = coverColors[Math.floor((Math.random()*5))];
-  book.style.backgroundColor = coverChoice;
+/// Included in the populateBookCase function
+let setCoverColor = function setCoverColors(){
+    books.forEach((book) => {
+    let coverChoice = coverColors[Math.floor((Math.random()*5))];
+    book.style.backgroundColor = coverChoice;
+  })
 }
 
-// Assign title and author
-let populateLibrary = function populate (author, title) {
-  sortLibrary();
+let populateBookCase = function populate (author, title) {
+  sortLibrary(); // Clone myLibrary and sort/ manipulate it.
   for (let i = 0; i < cloneLibrary.length; i += 1){
     authors[i].textContent = cloneLibrary[i].author;
     titles[i].textContent = cloneLibrary[i].title;
   };
+  setCoverColor();
 };
-populateLibrary();
+populateBookCase();
 
 
 
