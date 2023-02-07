@@ -15,13 +15,22 @@ const myLibrary = [
   {title: 'Harry Potter and the Deathly Hallows', author: 'Rowling'},
   {title: 'All the Light We Cannot See', author: 'Doerr'},
 ];
-let cloneLibrary = [...myLibrary].sort();
 
-cloneLibrary.sort(function(a, b) {
-  var textA = a.author.toUpperCase();
-  var textB = b.author.toUpperCase();
-  return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-});
+let cloneLibrary = [...myLibrary];
+
+// Sort copy of Library array by Author last name;
+
+function sortLibrary () {
+  cloneLibrary.sort(function(a, b) {
+    var textA = a.author.toUpperCase();
+    var textB = b.author.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
+}
+
+sortLibrary();
+
+console.log(cloneLibrary);
 
 coverColors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(156, 100, 0)", "rgb(150, 150, 0)", "rgb(0, 150, 150)"];
 
@@ -36,6 +45,7 @@ function setCoverColor(book){
 
 // Assign title and author
 let populateLibrary = function populate (author, title) {
+
   for (let i = 0; i < myLibrary.length; i += 1){
     authors[i].textContent = myLibrary[i].author;
     titles[i].textContent = myLibrary[i].title;

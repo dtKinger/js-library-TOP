@@ -210,8 +210,7 @@ a:hover{
  \ =================== */ 
 
 .case{
-  width: 350px;
-  height: 100%;
+  min-width: 350px;
   display: flex;
   flex-direction: column;
   border: 6px solid brown;
@@ -221,20 +220,15 @@ a:hover{
 
 .shelf{
   display: flex;
-  width: clac(100% - 10px);
-  min-height: 160px;
+  height: 250px;
   border-bottom: 4px solid brown;
-  padding: 20px 5px 0px 5px;
-}
-
-.all {
-color: rgb(156, 101, 0)
 }
 
 .book{
   min-width: 40px;
   max-width: 70px;
   min-height: 100px;
+  max-height: 250px;
   border: 3px solid black;
   text-align: center;
   margin-top: auto;
@@ -248,7 +242,6 @@ color: rgb(156, 101, 0)
 }
 
 .book-info{
-
 }
 
 .author{
@@ -261,8 +254,8 @@ color: rgb(156, 101, 0)
   display: block;
   text-align: center;
   font-size: 0.75rem;
-  overflow: none;
   word-wrap: break-word;
-  padding-top: 10px;
+  width: 90%;
+  margin: 0 auto;
   color: ivory;
 }
