@@ -228,7 +228,7 @@ a:hover{
   background-size: cover;
 }
 
-.shelf{
+.shelf1, .shelf2, .shelf3{
   display: flex;
   height: 250px;
   border-bottom: 8px solid  rgb(106, 31, 31);

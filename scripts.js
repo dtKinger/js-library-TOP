@@ -5,6 +5,9 @@ let bookCount = document.querySelector('.book-count');
 const addBookBtn = document.querySelector('.add-book');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
+const shelfOne = document.getElementById('shelf1');
+const shelfTwo = document.getElementById('shelf2');
+const shelfThree = document.getElementById('shelf3');
 
 
 const myLibrary = [
@@ -41,21 +44,21 @@ coverColors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(156, 1
 
 // Populate bookshelf
 /// Included in the populateBookCase function
-let setCoverColor = function setCoverColors(){
+function setCoverColors(){
     books.forEach((book) => {
     let coverChoice = coverColors[Math.floor((Math.random()*5))];
     book.style.backgroundColor = coverChoice;
   })
 }
 
-let populateBookCase = function populate (author, title) {
+function populateBookCase () {
   sortLibrary(); // Clone myLibrary and sort/ manipulate it.
   for (let i = 0; i < libClone.length; i += 1){
     authors[i].textContent = libClone[i].author;
     titles[i].textContent = libClone[i].title;
     books[i].setAttribute('data-id', i);
   };
-  setCoverColor();
+  setCoverColors();
   // Update Book Count
   bookCount.textContent = libClone.length;
   refreshDeleteBtns();
@@ -80,30 +83,42 @@ function refreshDeleteBtns(){
 
 
 // Add new book objects
-// Create a .setAttribute(data-id, "i")
+
 /// Constructor
-function Book() {
-  this.title = title;
-  this.author = author;
+function Book(title, author) {
+  this.title = newTitle.value;
+  this.author = newAuthor.value;
 }
 
+// Create new Book and add it to library.
 addBookBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  let title = newTitle.value;
-  let author = newAuthor.value;
-  newBook(title, author);
+  if (newTitle.value != '' && newAuthor.value != ''){
+    if (bookCount.textContent < 15){
+        myLibrary.push(new Book);
+        newTitle.value = '';
+        newAuthor.value = '';
+        newTitle.focus();
+        populateBookCase();
+      } else {
+    alert('The shelf is full!');
+    return;
+    }
+  }
 });
 
-function newBook(title, author){
-  let newBook = Object.create(Book);
-  console.log(Book);
-  console.log(newBook);
-}
-
-function addToLibrary(){
-  
+/*
+function addToShelf () {
+  if (bookCount <= 5){
+    addToShelfOne ()
+    } else if (bookCount <= 10){
+    addToShelfTwo ()
+    } else if (bookCount <= 15){
+    addToShelfThree () 
+    } else {
+      alert('Book case is full, sorry!')
+    }
 };
-
-
+*/
 
 
