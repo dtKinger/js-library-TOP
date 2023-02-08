@@ -72,16 +72,14 @@ function refreshDeleteBtns(){
   let takeBookBtns = document.querySelectorAll('.btn-delete');
   takeBookBtns.forEach(function (book) {
     book.addEventListener('click', function (e) {
+      // Delete book from array
       let dataId = (e.target.parentElement.parentElement.parentElement).getAttribute('data-id');
       libClone.splice(dataId, 1);
+      // Delete HTML element of the book
       (e.target.parentElement.parentElement.parentElement).remove();
     });
   });
 }
-
-function deleteFromLibrary(){
-  
-};
 
 function addToLibrary(){
 

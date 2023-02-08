@@ -222,15 +222,16 @@ a:hover{
   min-width: 350px;
   display: flex;
   flex-direction: column;
-  border: 6px solid brown;
+  border: 10px solid rgb(106, 31, 31);
   margin-top: 20px;
-  background-color: rgba(165, 42, 42, 0.3);
+  background-image: url('/Optimized-jon-moore-5fIoyoKlz7A-unsplash.jpg');
+  background-size: cover;
 }
 
 .shelf{
   display: flex;
   height: 250px;
-  border-bottom: 4px solid brown;
+  border-bottom: 8px solid  rgb(106, 31, 31);
 }
 
 .book{
@@ -287,4 +288,8 @@ a:hover{
 .btn-delete button{
   font-size: .8rem;
   border-radius: 10px;
+}
+
+.credit{
+  font-size: .6rem;
 }
