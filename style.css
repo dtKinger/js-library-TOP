@@ -179,10 +179,9 @@ input:-webkit-autofill{
 }
 
 button{
-  background-color: rgb(56, 56, 56);
+  background-color: rgba(56, 56, 56, 0.9);
   color: ivory;
-  padding: 10px 20px;
-  margin: 10px;
+  padding: 5px 10px;
   font-size: 18px;
 }
 
@@ -209,6 +208,16 @@ a:hover{
 |         Classes        |
  \ =================== */ 
 
+.section-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.shelf-capacity, .add-a-book{
+  max-width: 20%
+}
+
 .case{
   min-width: 350px;
   display: flex;
@@ -225,6 +234,9 @@ a:hover{
 }
 
 .book{
+
+  position: relative;
+
   min-width: 40px;
   max-width: 70px;
   min-height: 100px;
@@ -258,4 +270,27 @@ a:hover{
   width: 90%;
   margin: 0 auto;
   color: ivory;
+}
+
+.btn-delete:hover{
+  /* display: none; */
+}
+
+
+
+.btn-delete{
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 0px;
+}
+
+.btn-delete button{
+  font-size: .8rem;
+  border-radius: 10px;
+}
+
+.book:hover .btn-delete{
+  display: inline-block;
 }

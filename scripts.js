@@ -1,6 +1,8 @@
 const books = document.querySelectorAll('.book');
 const authors = document.querySelectorAll('.author');
 const titles = document.querySelectorAll('.title');
+let bookCount = document.querySelector('.book-count');
+
 const myLibrary = [
   {title: 'The Hobbit', author: 'Tolkien'},
   {title: 'Lord of the Rings: Fellowship of the Ring', author: 'Tolkien'},
@@ -31,13 +33,6 @@ function sortLibrary () {
   });
 }
 
-newBook1 = {title: 'Yes1', author: 'Me1'};
-newBook2 = {title: 'Yes2', author: 'Me2'};
-newBook3 = {title: 'Yes3', author: 'Me3'};
-newBook4 = {title: 'Yes4', author: 'Me4'};
-newBook5 = {title: 'Yes5', author: 'Me5'};
-
-
 coverColors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(156, 100, 0)", "rgb(150, 150, 0)", "rgb(0, 150, 150)"];
 
 // Populate bookshelf
@@ -56,6 +51,8 @@ let populateBookCase = function populate (author, title) {
     titles[i].textContent = libClone[i].title;
   };
   setCoverColor();
+  // Update Book Count
+  bookCount.textContent = libClone.length;
 };
 populateBookCase();
 
