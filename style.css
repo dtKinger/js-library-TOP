@@ -272,12 +272,6 @@ a:hover{
   color: ivory;
 }
 
-.btn-delete:hover{
-  /* display: none; */
-}
-
-
-
 .btn-delete{
   cursor: pointer;
   display: none;
@@ -286,11 +280,11 @@ a:hover{
   left: 0px;
 }
 
+.book:hover .btn-delete{
+  display: inline-block;
+}
+
 .btn-delete button{
   font-size: .8rem;
   border-radius: 10px;
-}
-
-.book:hover .btn-delete{
-  display: inline-block;
 }
