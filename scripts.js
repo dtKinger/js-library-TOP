@@ -2,6 +2,9 @@ const books = document.querySelectorAll('.book');
 const authors = document.querySelectorAll('.author');
 const titles = document.querySelectorAll('.title');
 let bookCount = document.querySelector('.book-count');
+const addBookBtn = document.querySelector('.add-book');
+const newTitle = document.getElementById('new-title');
+const newAuthor = document.getElementById('new-author');
 
 
 const myLibrary = [
@@ -59,14 +62,6 @@ let populateBookCase = function populate (author, title) {
 };
 populateBookCase();
 
-// Add new book objects
-// Create a data-id="array.index"
-/// Constructor
-function Book() {
-  this.title = title;
-  this.author = author;
-}
-
 // Delete ("Take / check out") a book
 function refreshDeleteBtns(){
   let takeBookBtns = document.querySelectorAll('.btn-delete');
@@ -77,12 +72,36 @@ function refreshDeleteBtns(){
       libClone.splice(dataId, 1);
       // Delete HTML element of the book
       (e.target.parentElement.parentElement.parentElement).remove();
+      // Update shelf count
+      bookCount.textContent = libClone.length;
     });
   });
 }
 
-function addToLibrary(){
 
+// Add new book objects
+// Create a .setAttribute(data-id, "i")
+/// Constructor
+function Book() {
+  this.title = title;
+  this.author = author;
+}
+
+addBookBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  let title = newTitle.value;
+  let author = newAuthor.value;
+  newBook(title, author);
+});
+
+function newBook(title, author){
+  let newBook = Object.create(Book);
+  console.log(Book);
+  console.log(newBook);
+}
+
+function addToLibrary(){
+  
 };
 
 
