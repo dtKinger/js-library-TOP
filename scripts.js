@@ -11,6 +11,10 @@ const newAuthor = document.getElementById('new-author');
 const shelfOne = document.getElementById('shelf1');
 const shelfTwo = document.getElementById('shelf2');
 const shelfThree = document.getElementById('shelf3');
+const bookCase = document.getElementById('case');
+
+const div = document.createElement("div");
+const span = document.createElement("span");
 
 
 const myLibrary = [
@@ -54,13 +58,30 @@ function setCoverColors(){
   })
 }
 
-function generateLib() {
+function generateLibHtml() {
+
   for (let i = 0; i < libClone.length; i += 1){
-    authors[i].textContent = libClone[i].author;
-    titles[i].textContent = libClone[i].title;
-    books[i].setAttribute('data-id', i);
+    let newBook = div;
+    newBook.classList.add("book");
+    newBook.innerHTML = `<div class="book-info"><span class="author"></span><span class="title"></span><div class="btn-delete"><button>Take Book</button></div></div>`;
+    shelfOne.append(newBook);
+
+    // authors[i].textContent = libClone[i].author;
+    // titles[i].textContent = libClone[i].title;
+    // books[i].setAttribute('data-id', i);
+    
   };
-}
+
+  if (bookCount <= 5){
+    addToShelfOne ()
+    } else if (bookCount <= 10){
+    addToShelfTwo ()
+    } else if (bookCount <= 15){
+    addToShelfThree () 
+    } else if (bookCount >= 15){
+      alert('Book case is full, sorry!')
+    }
+};
 
 function updateBookCount(){
   bookCount.textContent = libClone.length;
@@ -68,7 +89,7 @@ function updateBookCount(){
 
 function populateBookCase () {
   sortLibrary(); // Clone myLibrary and sort/ manipulate it.
-  generateLib();
+  generateLibHtml();
   setCoverColors();
   updateBookCount();
   refreshDeleteBtns();
@@ -115,19 +136,5 @@ addBookBtn.addEventListener('click', (e) => {
     }
   }
 });
-
-/*
-function addToShelf () {
-  if (bookCount <= 5){
-    addToShelfOne ()
-    } else if (bookCount <= 10){
-    addToShelfTwo ()
-    } else if (bookCount <= 15){
-    addToShelfThree () 
-    } else {
-      alert('Book case is full, sorry!')
-    }
-};
-*/
 
 
