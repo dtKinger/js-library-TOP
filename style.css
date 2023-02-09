@@ -65,6 +65,9 @@ body {
 
   display: flex;
   flex-direction: column;
+  background-image: url('Optimized-eleonore-kemmel-K2Rrug-aWAg-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1{
@@ -182,6 +185,8 @@ button{
   background-color: rgba(56, 56, 56, 0.9);
   color: ivory;
   padding: 5px 10px;
+
+  margin-top: 10px;
   font-size: 18px;
 }
 
@@ -215,7 +220,10 @@ a:hover{
 }
 
 .shelf-capacity, .add-a-book{
-  max-width: 20%
+  max-width: 20%;
+  background-color: ivory;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .case{
@@ -292,4 +300,7 @@ a:hover{
 
 .credit{
   font-size: .6rem;
+  color: ivory;
+  display: flex;
+  flex-direction: column;
 }

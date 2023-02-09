@@ -1,3 +1,6 @@
+// Bug. Need to not rely on the 15 div's to hold books
+// Instead, need to use append to add and JS to remove
+
 const books = document.querySelectorAll('.book');
 const authors = document.querySelectorAll('.author');
 const titles = document.querySelectorAll('.title');
@@ -51,16 +54,23 @@ function setCoverColors(){
   })
 }
 
-function populateBookCase () {
-  sortLibrary(); // Clone myLibrary and sort/ manipulate it.
+function generateLib() {
   for (let i = 0; i < libClone.length; i += 1){
     authors[i].textContent = libClone[i].author;
     titles[i].textContent = libClone[i].title;
     books[i].setAttribute('data-id', i);
   };
-  setCoverColors();
-  // Update Book Count
+}
+
+function updateBookCount(){
   bookCount.textContent = libClone.length;
+};
+
+function populateBookCase () {
+  sortLibrary(); // Clone myLibrary and sort/ manipulate it.
+  generateLib();
+  setCoverColors();
+  updateBookCount();
   refreshDeleteBtns();
 };
 populateBookCase();
@@ -75,8 +85,7 @@ function refreshDeleteBtns(){
       libClone.splice(dataId, 1);
       // Delete HTML element of the book
       (e.target.parentElement.parentElement.parentElement).remove();
-      // Update shelf count
-      bookCount.textContent = libClone.length;
+      updateBookCount();
     });
   });
 }
@@ -102,7 +111,7 @@ addBookBtn.addEventListener('click', (e) => {
         populateBookCase();
       } else {
     alert('The shelf is full!');
-    return;
+    return; // exit
     }
   }
 });
