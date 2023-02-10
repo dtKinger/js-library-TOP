@@ -227,9 +227,10 @@ a:hover{
 }
 
 .case{
-  min-width: 350px;
+  width: 350px;
+  height: 700px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   border: 10px solid rgb(106, 31, 31);
   margin-top: 20px;
   background-image: url('/Optimized-jon-moore-5fIoyoKlz7A-unsplash.jpg');
