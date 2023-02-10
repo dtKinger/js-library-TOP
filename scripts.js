@@ -82,6 +82,8 @@ function generateLibHtml () {
     bookCase.appendChild(divBook);
   }
 
+  refreshDeleteBtns();
+
 };
 
 function updateBookCount(){
@@ -93,9 +95,9 @@ function populateBookCase () {
   updateBookCount();
   generateLibHtml();
   setCoverColors();
-  refreshDeleteBtns();
 };
 populateBookCase();
+
 
 // Delete ("Take / check out") a book
 function refreshDeleteBtns(){
