@@ -25,9 +25,10 @@ const myLibrary = [
   {title: 'All the Light We Cannot See', author: 'Doerr'},
 ];
 
-let cloneLibrary = function cloneLibrary (){
+function cloneLibrary (){
   return libClone = [...myLibrary];
 };
+cloneLibrary();
 
 // Sort copy of Library array by Author last name;
 
@@ -74,6 +75,7 @@ function generateLibHtml () {
 };
 
 function updateBookCount(){
+
   bookCount.textContent = libClone.length;
 };
 
