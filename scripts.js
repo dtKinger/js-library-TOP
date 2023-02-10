@@ -59,17 +59,27 @@ function generateLibHtml () {
 
   for (let i = 0; i < libClone.length; i += 1) {
     
-    let div = document.createElement('div');
-    div.classList.add('book');
-      let span = document.createElement('span');
-      span.classList.add('author');
-      let p = document.createElement('p');
-      p.classList.add('title');
-      p.textContent = libClone[i].title;
-      span.textContent = libClone[i].author;
-      div.appendChild(span);
-      div.appendChild(p);
-    bookCase.appendChild(div);
+    let divBook = document.createElement('div');
+    divBook.classList.add('book');
+      let spanAuthor = document.createElement('span');
+      spanAuthor.classList.add('author');
+      spanAuthor.textContent = libClone[i].author;
+
+      let paraTitle = document.createElement('p');
+      paraTitle.classList.add('title');
+      paraTitle.textContent = libClone[i].title;
+      
+      let divBtnDelete = document.createElement('div');
+      divBtnDelete.classList.add('btn-delete');
+      let btnDelete = document.createElement('button');
+      btnDelete.textContent = 'Take Book';
+      divBtnDelete.appendChild(btnDelete);
+
+
+      divBook.appendChild(spanAuthor);
+      divBook.appendChild(paraTitle);
+      divBook.appendChild(divBtnDelete);
+    bookCase.appendChild(divBook);
   }
 
 };
@@ -93,10 +103,10 @@ function refreshDeleteBtns(){
   takeBookBtns.forEach(function (book) {
     book.addEventListener('click', function (e) {
       // Delete book from array
-      let dataId = (e.target.parentElement.parentElement.parentElement).getAttribute('data-id');
+      let dataId = (e.target.parentElement.parentElement).getAttribute('data-id');
       libClone.splice(dataId, 1);
       // Delete HTML element of the book
-      (e.target.parentElement.parentElement.parentElement).remove();
+      (e.target.parentElement.parentElement).remove();
       updateBookCount();
     });
   });
