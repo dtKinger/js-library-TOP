@@ -54,12 +54,14 @@ function setCoverColors(){
 }
 
 
-
 function generateLibHtml () {
+
+  // Create div.book
 
 
   for (let i = 0; i < libClone.length; i += 1){
-    
+
+    console.log(`${libClone[i].title}, ${libClone[i].author}`);
   }
 
 
