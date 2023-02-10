@@ -52,12 +52,9 @@ function setCoverColors(){
   })
 }
 
-
-
-
 function generateLibHtml () {
-
   cloneLibrary();
+  sortLibrary();
 
   for (let i = 0; i < libClone.length; i += 1) {
     
@@ -81,7 +78,6 @@ function updateBookCount(){
 };
 
 function populateBookCase () {
-  sortLibrary(); // Clone myLibrary and sort/ manipulate it.
   updateBookCount();
   generateLibHtml();
   setCoverColors();
