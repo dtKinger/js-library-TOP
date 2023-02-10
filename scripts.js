@@ -10,7 +10,6 @@ const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
 const bookCase = document.getElementById('case');
 
-const div = document.createElement("div");
 
 const myLibrary = [
   {title: 'The Hobbit', author: 'Tolkien'},
@@ -53,16 +52,38 @@ function setCoverColors(){
   })
 }
 
+function makeTable () {
+
+  cloneLibrary();
+
+
+  for (let i = 0; i < libClone.length; i += 1) {
+    
+    let div = document.createElement('div');
+    div.classList.add('book');
+      let span = document.createElement('span');
+      span.classList.add('author');
+      let p = document.createElement('p');
+      p.classList.add('title');
+      p.textContent = libClone[i].title;
+      span.textContent = libClone[i].author;
+      div.appendChild(span);
+      div.appendChild(p);
+    bookCase.appendChild(div);
+  }
+}
+
+makeTable();
+
 
 function generateLibHtml () {
 
   // Create div.book
 
 
-  for (let i = 0; i < libClone.length; i += 1){
-
-    console.log(`${libClone[i].title}, ${libClone[i].author}`);
-  }
+  // for (let i = 0; i < libClone.length; i += 1){
+  //   `${libClone[i].title}, ${libClone[i].author}`;
+  // }
 
 
     // Give the HTML Content values
@@ -109,6 +130,7 @@ function refreshDeleteBtns(){
 function Book(title, author) {
   this.title = newTitle.value;
   this.author = newAuthor.value;
+  // Add a function for read status
 }
 
 // Create new Book and add it to library.
