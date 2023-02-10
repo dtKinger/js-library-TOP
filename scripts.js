@@ -1,7 +1,6 @@
 // Bug. Need to not rely on the 15 div's to hold books
 // Instead, need to use append to add and JS to remove
 
-const books = document.querySelectorAll('.book');
 const authors = document.querySelectorAll('.author');
 const titles = document.querySelectorAll('.title');
 let bookCount = document.querySelector('.book-count');
@@ -46,16 +45,19 @@ coverColors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(156, 1
 // Populate bookshelf
 /// Included in the populateBookCase function
 function setCoverColors(){
+  const books = document.querySelectorAll('.book');
     books.forEach((book) => {
     let coverChoice = coverColors[Math.floor((Math.random()*5))];
     book.style.backgroundColor = coverChoice;
   })
 }
 
-function makeTable () {
+
+
+
+function generateLibHtml () {
 
   cloneLibrary();
-
 
   for (let i = 0; i < libClone.length; i += 1) {
     
@@ -71,27 +73,6 @@ function makeTable () {
       div.appendChild(p);
     bookCase.appendChild(div);
   }
-}
-
-makeTable();
-
-
-function generateLibHtml () {
-
-  // Create div.book
-
-
-  // for (let i = 0; i < libClone.length; i += 1){
-  //   `${libClone[i].title}, ${libClone[i].author}`;
-  // }
-
-
-    // Give the HTML Content values
-    // for (let i = 0; i < libClone.length; i += 1){
-    // authors[i].textContent = libClone[i].author;
-    // titles[i].textContent = libClone[i].title;
-    // books[i].setAttribute('data-id', i);
-    // };
 
 };
 
