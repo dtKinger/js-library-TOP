@@ -234,7 +234,7 @@ a:hover{
 
 .case{
   width: 350px;
-  height: 700px;
+  min-height: 700px;
   display: flex;
   flex-wrap: wrap;
   border: 10px solid rgb(106, 31, 31);
