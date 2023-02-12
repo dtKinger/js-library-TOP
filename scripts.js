@@ -16,7 +16,7 @@ const bookCase = document.getElementById('case');
 
 const myLibrary = [
   {title: 'The Hobbit', author: 'Tolkien', recommended: false},
-  {title: 'Lord of the Rings: Fellowship of the Ring', author: 'Tolkien', recommended: false},
+  {title: 'Lord of the Rings: Fellowship of the Ring', author: 'Tolkien', recommended: true},
   {title: 'Lord of the Rings: Two Towers', author: 'Tolkien', recommended: false},
   {title: 'Lord of the Rings: Return of the King', author: 'Tolkien', recommended: false},
   {title: 'Harry Potter and the Philosopher\'s Stone', author: 'Rowling', recommended: false},
@@ -74,7 +74,7 @@ function generateLibHtml () {
     divBook.classList.add('book');
     if (libClone[i].recommended === true) {
       divBook.classList.add('recommended');
-    }
+    };
       let spanAuthor = document.createElement('span');
       spanAuthor.classList.add('author');
       spanAuthor.textContent = libClone[i].author;
@@ -134,13 +134,14 @@ function refreshDeleteBtns(){
 function Book(title, author) {
   this.title = newTitle.value;
   this.author = newAuthor.value;
-  this.recommended = newRecommended.value;
+  this.recommended = newRecommended.checked;
+  console.log(newRecommended.checked);
 }
 
 function BookMb(title, author) {
   this.title = newTitleMb.value;
   this.author = newAuthorMb.value;
-  this.recommended = newRecommendedMb.value;
+  this.recommended = newRecommendedMb;
 }
 
 // Create new Book and add it to library.
@@ -151,7 +152,6 @@ addBookBtn.addEventListener('click', (e) => {
         libClone.push(new Book);
         newTitle.value = '';
         newAuthor.value = '';
-
         newTitle.focus();
         populateBookCase();
       } else {
