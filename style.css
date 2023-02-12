@@ -119,6 +119,7 @@ main {
 /* Will need to replace the OS styles */
 input{
   appearance: none;
+  -webkit--appearance: none;
 }
 
 input[type="checkbox"]{
