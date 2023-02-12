@@ -127,7 +127,7 @@ input[type="checkbox"]{
   width: 1em;
   height: 1em;
   /* Adjusts the position of the checkboxes on the text baseline */
-  vertical-align: -4px;
+  vertical-align: -1px;
   /* Set here so that Windows' High-Contrast Mode can override */
   color: green;
 }
@@ -318,6 +318,10 @@ input{
   border: 2px solid rgb(70, 44, 20);
   border-radius: 5px;
   background: lightcyan;
+}
+
+.recommended {
+  border: 2px solid green;
 }
 
 @media screen and (max-width: 780px){

@@ -8,23 +8,25 @@ const addBookBtn = document.querySelector('.add-book');
 const addBookMbBtn = document.querySelector('.add-book-mb');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
+const newRecommended = document.getElementById('recommended')
+const newRecommendedMb = document.getElementById('recommended-mb')
 const newTitleMb = document.getElementById('new-title-mb');
 const newAuthorMb = document.getElementById('new-author-mb');
 const bookCase = document.getElementById('case');
 
 const myLibrary = [
-  {title: 'The Hobbit', author: 'Tolkien'},
-  {title: 'Lord of the Rings: Fellowship of the Ring', author: 'Tolkien'},
-  {title: 'Lord of the Rings: Two Towers', author: 'Tolkien'},
-  {title: 'Lord of the Rings: Return of the King', author: 'Tolkien'},
-  {title: 'Harry Potter and the Philosopher\'s Stone', author: 'Rowling'},
-  {title: 'Harry Potter and the Chamber of Secrets', author: 'Rowling'},
-  {title: 'Harry Potter and the Prisoner of Azkaban', author: 'Rowling'},
-  {title: 'Harry Potter and the Goblet of Fire', author: 'Rowling'},
-  {title: 'Harry Potter and the Order of the Phoenix', author: 'Rowling'},
-  {title: 'Harry Potter and the Half Blood Prince', author: 'Rowling'},
-  {title: 'Harry Potter and the Deathly Hallows', author: 'Rowling'},
-  {title: 'All the Light We Cannot See', author: 'Doerr'},
+  {title: 'The Hobbit', author: 'Tolkien', recommended: false},
+  {title: 'Lord of the Rings: Fellowship of the Ring', author: 'Tolkien', recommended: false},
+  {title: 'Lord of the Rings: Two Towers', author: 'Tolkien', recommended: false},
+  {title: 'Lord of the Rings: Return of the King', author: 'Tolkien', recommended: false},
+  {title: 'Harry Potter and the Philosopher\'s Stone', author: 'Rowling', recommended: false},
+  {title: 'Harry Potter and the Chamber of Secrets', author: 'Rowling', recommended: true},
+  {title: 'Harry Potter and the Prisoner of Azkaban', author: 'Rowling', recommended: false},
+  {title: 'Harry Potter and the Goblet of Fire', author: 'Rowling', recommended: false},
+  {title: 'Harry Potter and the Order of the Phoenix', author: 'Rowling', recommended: true},
+  {title: 'Harry Potter and the Half Blood Prince', author: 'Rowling', recommended: false},
+  {title: 'Harry Potter and the Deathly Hallows', author: 'Rowling', recommended: false},
+  {title: 'All the Light We Cannot See', author: 'Doerr', recommended: false},
 ];
 
 function cloneLibrary (){
@@ -65,10 +67,14 @@ function generateLibHtml () {
   dumpHtml();
   sortLibrary();
 
+  // Rebuild the library
   for (let i = 0; i < libClone.length; i += 1) {
     
     let divBook = document.createElement('div');
     divBook.classList.add('book');
+    if (libClone[i].recommended) {
+      divBook.classList.add('recommended');
+    }
       let spanAuthor = document.createElement('span');
       spanAuthor.classList.add('author');
       spanAuthor.textContent = libClone[i].author;
@@ -90,6 +96,7 @@ function generateLibHtml () {
   }
   refreshDeleteBtns();
 };
+
 
 function updateBookCount(){
   bookCount.textContent = libClone.length;
@@ -127,13 +134,13 @@ function refreshDeleteBtns(){
 function Book(title, author) {
   this.title = newTitle.value;
   this.author = newAuthor.value;
-  // Add a function for read status
+  this.recommended = newRecommended.value;
 }
 
 function BookMb(title, author) {
   this.title = newTitleMb.value;
   this.author = newAuthorMb.value;
-  // Add a function for read status
+  this.recommended = newRecommendedMb.value;
 }
 
 // Create new Book and add it to library.
@@ -144,6 +151,7 @@ addBookBtn.addEventListener('click', (e) => {
         libClone.push(new Book);
         newTitle.value = '';
         newAuthor.value = '';
+
         newTitle.focus();
         populateBookCase();
       } else {
