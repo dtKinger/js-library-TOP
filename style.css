@@ -234,7 +234,7 @@ a:hover{
 }
 
 .case{
-  width: 320px;
+  width: 350px;
   height: 700px;
   display: flex;
   flex-wrap: wrap;
@@ -304,9 +304,13 @@ a:hover{
   flex-direction: column;
 }
 
-
 .show-mb{
   display: none;
+}
+
+.row-mb{
+  min-width: 150px;
+  max-width: 20%;
 }
 
 @media screen and (max-width: 640px){
@@ -315,12 +319,22 @@ a:hover{
     flex-direction: column;
   }
 
+  .row-mb {
+    display: flex;
+    justify-content: center;
+  }
+
   .show{
     display: none;
   }
 
   .show-mb{
     display: block;
+  }
+
+  .shelf-capacity{
+    height: min-content;
+    align-self: center;
   }
 
 }
