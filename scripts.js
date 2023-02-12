@@ -47,7 +47,7 @@ function dumpHtml () {
   bookCase.innerHTML = '';
 };
 
-coverColors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(156, 100, 0)", "rgb(150, 150, 0)", "rgb(0, 150, 150)"];
+coverColors = ["rgb(100, 40, 30)", "rgb(40, 65, 20)", "rgb(20, 40, 65)", "rgb(156, 100, 0)", "rgb(150, 150, 0)", "rgb(0, 150, 150)"];
 
 // Populate bookshelf
 /// Included in the populateBookCase function
