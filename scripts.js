@@ -72,7 +72,7 @@ function generateLibHtml () {
     
     let divBook = document.createElement('div');
     divBook.classList.add('book');
-    if (libClone[i].recommended) {
+    if (libClone[i].recommended === true) {
       divBook.classList.add('recommended');
     }
       let spanAuthor = document.createElement('span');
