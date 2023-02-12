@@ -322,6 +322,7 @@ a:hover{
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin: 10px 0px;
   }
 
   .show{
