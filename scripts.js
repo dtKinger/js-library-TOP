@@ -48,6 +48,11 @@ function sortLibrary () {
   });
 }
 
+//
+function dumpHtml () {
+  bookCase.innerHTML = '';
+};
+
 coverColors = ["rgb(200, 0, 0)", "rgb(0, 200, 0)", "rgb(0, 0, 200)", "rgb(156, 100, 0)", "rgb(150, 150, 0)", "rgb(0, 150, 150)"];
 
 // Populate bookshelf
@@ -61,6 +66,9 @@ function setCoverColors(){
 }
 
 function generateLibHtml () {
+
+  // Delete existing Library so it can be refreshed.
+  dumpHtml();
   sortLibrary();
 
   for (let i = 0; i < libClone.length; i += 1) {
