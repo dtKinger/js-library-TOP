@@ -219,7 +219,7 @@ a:hover{
   justify-content: space-around;
 }
 
-.shelf-capacity, .add-a-book{
+.shelf-capacity, .add-a-book, .add-a-book-mb{
   min-width: 150px;
   max-width: 20%;
   background-color: ivory;

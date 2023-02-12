@@ -5,8 +5,11 @@ let authors = document.querySelectorAll('.author');
 let titles = document.querySelectorAll('.title');
 let bookCount = document.querySelector('.book-count');
 const addBookBtn = document.querySelector('.add-book');
+const addBookMbBtn = document.querySelector('.add-book-mb');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
+const newTitleMb = document.getElementById('new-title-mb');
+const newAuthorMb = document.getElementById('new-author-mb');
 const bookCase = document.getElementById('case');
 
 // const users = [
@@ -89,15 +92,12 @@ function generateLibHtml () {
       btnDelete.textContent = 'Take Book';
       divBtnDelete.appendChild(btnDelete);
 
-
       divBook.appendChild(spanAuthor);
       divBook.appendChild(paraTitle);
       divBook.appendChild(divBtnDelete);
     bookCase.appendChild(divBook);
   }
-
   refreshDeleteBtns();
-
 };
 
 function updateBookCount(){
@@ -135,9 +135,12 @@ function Book(title, author) {
   this.title = newTitle.value;
   this.author = newAuthor.value;
   // Add a function for read status
-  this.read = function readStatus () {
-    
-  }
+}
+
+function BookMb(title, author) {
+  this.title = newTitleMb.value;
+  this.author = newAuthorMb.value;
+  // Add a function for read status
 }
 
 // Create new Book and add it to library.
@@ -148,6 +151,27 @@ addBookBtn.addEventListener('click', (e) => {
         libClone.push(new Book);
         newTitle.value = '';
         newAuthor.value = '';
+        newTitle.focus();
+        populateBookCase();
+      } else {
+    alert('The shelf is full!');
+    return; // exit
+    }
+  } else {
+    alert('Title and Author are required.');
+    newTitle.focus();
+  }
+});
+
+// Duplicate for Mobile - so the inputs fields
+// can be verified independently
+addBookMbBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (newTitle.value != '' && newAuthor.value != ''){
+    if (bookCount.textContent < 15){
+        libClone.push(new BookMb);
+        newTitleMb.value = '';
+        newAuthorMb.value = '';
         newTitle.focus();
         populateBookCase();
       } else {
