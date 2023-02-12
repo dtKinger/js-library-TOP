@@ -56,6 +56,7 @@ coverColors = ["rgb(100, 40, 30)", "rgb(40, 65, 20)", "rgb(20, 40, 65)", "rgb(15
 function setCoverColors(){
   const books = document.querySelectorAll('.book');
     books.forEach((book) => {
+    book.addEventListener('ontouchstart', function(){});
     let coverChoice = coverColors[Math.floor((Math.random()*5))];
     book.style.backgroundColor = coverChoice;
   })
@@ -108,8 +109,6 @@ function populateBookCase () {
   setCoverColors();
 };
 populateBookCase();
-
-document.addEventListener('ontouchstart', function () {});
 
 // Delete ("Take / check out") a book
 function refreshDeleteBtns(){
