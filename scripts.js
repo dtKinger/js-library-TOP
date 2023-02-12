@@ -144,6 +144,9 @@ addBookBtn.addEventListener('click', (e) => {
     alert('The shelf is full!');
     return; // exit
     }
+  } else {
+    alert('Title and Author are required.');
+    newTitle.focus();
   }
 });
 
