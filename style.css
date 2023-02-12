@@ -244,9 +244,7 @@ a:hover{
 }
 
 .book{
-
   position: relative;
-
   min-width: 40px;
   max-width: 70px;
   min-height: 100px;
@@ -311,11 +309,16 @@ a:hover{
   display: none;
 }
 
-.row-mb{
+.col-mb{
   min-width: 150px;
   max-width: 20%;
 }
 
+input{
+  border: 2px solid rgb(70, 44, 20);
+  border-radius: 5px;
+  background: lightcyan;
+}
 
 @media screen and (max-width: 780px){
   
@@ -323,11 +326,19 @@ a:hover{
     flex-direction: column;
   }
 
-  .row-mb {
+  .col-mb {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     margin: 20px 0px 0px 0px;
+    width: 80%;
+    max-width: 100%;
+  }
+
+  .shelf-capacity{
+    min-width: 80%;
   }
 
   .show{
@@ -336,11 +347,7 @@ a:hover{
 
   .show-mb{
     display: block;
-  }
-
-  .shelf-capacity{
-    height: min-content;
-    align-self: center;
+    min-width: 80%;
   }
 
 }
