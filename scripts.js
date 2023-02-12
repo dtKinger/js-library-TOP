@@ -135,13 +135,12 @@ function Book(title, author) {
   this.title = newTitle.value;
   this.author = newAuthor.value;
   this.recommended = newRecommended.checked;
-  console.log(newRecommended.checked);
 }
 
 function BookMb(title, author) {
   this.title = newTitleMb.value;
   this.author = newAuthorMb.value;
-  this.recommended = newRecommendedMb;
+  this.recommended = newRecommendedMb.checked;
 }
 
 // Create new Book and add it to library.
