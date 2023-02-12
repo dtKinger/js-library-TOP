@@ -111,11 +111,13 @@ function populateBookCase () {
 };
 populateBookCase();
 
+document.addEventListener('ontouchstart', function () {});
 
 // Delete ("Take / check out") a book
 function refreshDeleteBtns(){
   let takeBookBtns = document.querySelectorAll('.btn-delete');
   takeBookBtns.forEach(function (book) {
+
     book.addEventListener('click', function (e) {
       // Delete book from array
       let dataId = (e.target.parentElement.parentElement).getAttribute('data-id');
