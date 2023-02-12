@@ -167,12 +167,12 @@ addBookBtn.addEventListener('click', (e) => {
 // can be verified independently
 addBookMbBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if (newTitle.value != '' && newAuthor.value != ''){
+  if (newTitleMb.value != '' && newAuthorMb.value != ''){
     if (bookCount.textContent < 15){
         libClone.push(new BookMb);
         newTitleMb.value = '';
         newAuthorMb.value = '';
-        newTitle.focus();
+        newTitleMb.focus();
         populateBookCase();
       } else {
     alert('The shelf is full!');
@@ -180,7 +180,7 @@ addBookMbBtn.addEventListener('click', (e) => {
     }
   } else {
     alert('Title and Author are required.');
-    newTitle.focus();
+    newTitleMb.focus();
   }
 });
 
