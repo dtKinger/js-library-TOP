@@ -12,15 +12,6 @@ const newTitleMb = document.getElementById('new-title-mb');
 const newAuthorMb = document.getElementById('new-author-mb');
 const bookCase = document.getElementById('case');
 
-// const users = [
-//   { firstName: "Daniel", lastName: "King", age: 34 },
-//   { firstName: "Donald", lastName: "Trump", age: 75 },
-//   { firstName: "Lucie", lastName: "Ho", age: 27 },
-// ];
-
-// const output = users.filter(x => x.age < 40).map(y => y.firstName );
-// console.log(output);
-
 const myLibrary = [
   {title: 'The Hobbit', author: 'Tolkien'},
   {title: 'Lord of the Rings: Fellowship of the Ring', author: 'Tolkien'},
