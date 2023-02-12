@@ -225,7 +225,6 @@ a:hover{
   background-color: ivory;
   padding: 10px;
   border-radius: 5px;
-  margin: 10px;
 }
 
 .book-count{
@@ -322,6 +321,7 @@ a:hover{
   .row-mb {
     display: flex;
     justify-content: center;
+    gap: 10px;
   }
 
   .show{
