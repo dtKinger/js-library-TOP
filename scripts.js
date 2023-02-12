@@ -1,14 +1,22 @@
 // Bug. Need to not rely on the 15 div's to hold books
 // Instead, need to use append to add and JS to remove
 
-const authors = document.querySelectorAll('.author');
-const titles = document.querySelectorAll('.title');
+let authors = document.querySelectorAll('.author');
+let titles = document.querySelectorAll('.title');
 let bookCount = document.querySelector('.book-count');
 const addBookBtn = document.querySelector('.add-book');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
 const bookCase = document.getElementById('case');
 
+// const users = [
+//   { firstName: "Daniel", lastName: "King", age: 34 },
+//   { firstName: "Donald", lastName: "Trump", age: 75 },
+//   { firstName: "Lucie", lastName: "Ho", age: 27 },
+// ];
+
+// const output = users.filter(x => x.age < 40).map(y => y.firstName );
+// console.log(output);
 
 const myLibrary = [
   {title: 'The Hobbit', author: 'Tolkien'},
@@ -33,7 +41,6 @@ cloneLibrary();
 // Sort copy of Library array by Author last name;
 
 function sortLibrary () {
-  cloneLibrary();
   libClone.sort(function(a, b) {
     var textA = a.author.toUpperCase();
     var textB = b.author.toUpperCase();
@@ -54,7 +61,6 @@ function setCoverColors(){
 }
 
 function generateLibHtml () {
-  cloneLibrary();
   sortLibrary();
 
   for (let i = 0; i < libClone.length; i += 1) {
@@ -92,8 +98,8 @@ function updateBookCount(){
 };
 
 function populateBookCase () {
-  updateBookCount();
   generateLibHtml();
+  updateBookCount();
   setCoverColors();
 };
 populateBookCase();
@@ -129,7 +135,7 @@ addBookBtn.addEventListener('click', (e) => {
   e.preventDefault();
   if (newTitle.value != '' && newAuthor.value != ''){
     if (bookCount.textContent < 15){
-        myLibrary.push(new Book);
+        libClone.push(new Book);
         newTitle.value = '';
         newAuthor.value = '';
         newTitle.focus();
