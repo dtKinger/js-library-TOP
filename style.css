@@ -304,8 +304,23 @@ a:hover{
   flex-direction: column;
 }
 
+
+.show-mb{
+  display: none;
+}
+
 @media screen and (max-width: 640px){
+  
   .section-wrapper{
     flex-direction: column;
   }
+
+  .show{
+    display: none;
+  }
+
+  .show-mb{
+    display: block;
+  }
+
 }

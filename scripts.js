@@ -3,7 +3,7 @@
 
 let authors = document.querySelectorAll('.author');
 let titles = document.querySelectorAll('.title');
-let bookCount = document.querySelector('.book-count');
+let bookCount = document.querySelectorAll('.book-count');
 const addBookBtn = document.querySelector('.add-book');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
@@ -101,8 +101,9 @@ function generateLibHtml () {
 };
 
 function updateBookCount(){
-
-  bookCount.textContent = libClone.length;
+  bookCount.forEach((counter) => {
+    counter.textContent = libClone.length;
+  });
 };
 
 function populateBookCase () {
@@ -136,6 +137,9 @@ function Book(title, author) {
   this.title = newTitle.value;
   this.author = newAuthor.value;
   // Add a function for read status
+  this.read = function readStatus () {
+    
+  }
 }
 
 // Create new Book and add it to library.
