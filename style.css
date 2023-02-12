@@ -219,9 +219,16 @@ a:hover{
   justify-content: space-around;
 }
 
-.shelf-capacity, .add-a-book, .add-a-book-mb{
+.add-a-book, .add-a-book-mb{
   min-width: 150px;
   max-width: 20%;
+  background-color: ivory;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.shelf-capacity{
+  min-width: 150px;
   background-color: ivory;
   padding: 10px;
   border-radius: 5px;
@@ -321,7 +328,16 @@ input{
 }
 
 .recommended {
-  border: 2px solid green;
+  border: 2px solid rgb(0, 205, 0);
+}
+
+.unrecommended{
+  border: 3px solid black;
+}
+
+span.recommended, span.unrecommended {
+  display: block;
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 780px){
@@ -351,7 +367,11 @@ input{
 
   .show-mb{
     display: block;
-    min-width: 80%;
+    min-width: 100%;
+  }
+
+  .shelf-capacity{
+    min-width: 100%;
   }
 
 }
