@@ -3,7 +3,7 @@
 
 let authors = document.querySelectorAll('.author');
 let titles = document.querySelectorAll('.title');
-let bookCount = document.querySelectorAll('.book-count');
+let bookCount = document.querySelector('.book-count');
 const addBookBtn = document.querySelector('.add-book');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
@@ -101,9 +101,7 @@ function generateLibHtml () {
 };
 
 function updateBookCount(){
-  bookCount.forEach((counter) => {
-    counter.textContent = libClone.length;
-  });
+  bookCount.textContent = libClone.length;
 };
 
 function populateBookCase () {

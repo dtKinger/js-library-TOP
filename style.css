@@ -303,6 +303,10 @@ a:hover{
   flex-direction: column;
 }
 
+.show {
+  display: block;
+}
+
 .show-mb{
   display: none;
 }
@@ -312,7 +316,8 @@ a:hover{
   max-width: 20%;
 }
 
-@media screen and (max-width: 640px){
+
+@media screen and (max-width: 780px){
   
   .section-wrapper{
     flex-direction: column;
@@ -322,7 +327,7 @@ a:hover{
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 10px 0px;
+    margin: 20px 0px 0px 0px;
   }
 
   .show{

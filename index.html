@@ -14,16 +14,11 @@
   <main>
 
     <section class="section-wrapper">
-      <div class="shelf-capacity show">
-        <p>This book case is holding <span class="book-count"></span>/ 15 books.</p>
-      </div>
-      <div class="case" id="case">
-      </div>
       <div class="row-mb">
-        <div class="shelf-capacity show-mb">
+        <div class="shelf-capacity">
           <p>This book case is holding <span class="book-count"></span>/ 15 books.</p>
         </div>
-        <div class="add-a-book">
+        <div class="add-a-book show-mb">
           <p>Enter a book's details and we will sort it for you.</p>
           <form action="">
             <label for="title">Title: </label><input type="text" id="new-title" name="title" required aria-required="true">
@@ -32,6 +27,16 @@
           </form>
         </div>
       </div>
+      <div class="case" id="case">
+      </div>
+        <div class="add-a-book show">
+          <p>Enter a book's details and we will sort it for you.</p>
+          <form action="">
+            <label for="title">Title: </label><input type="text" id="new-title" name="title" required aria-required="true">
+            <label for="author">Author: </label><input type="text" id="new-author" name="author" required aria-required="true">
+            <button type="input" class="add-book">Add book</button>
+          </form>
+        </div>
     </section>
 
 </p>
