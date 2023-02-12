@@ -220,14 +220,21 @@ a:hover{
 }
 
 .shelf-capacity, .add-a-book{
+  min-width: 150px;
   max-width: 20%;
   background-color: ivory;
   padding: 10px;
   border-radius: 5px;
+  margin: 10px;
+}
+
+.book-count{
+  color: darkred;
+  font-weight: bold;
 }
 
 .case{
-  width: 350px;
+  width: 320px;
   height: 700px;
   display: flex;
   flex-wrap: wrap;
@@ -235,12 +242,6 @@ a:hover{
   margin-top: 20px;
   background-image: url('/Optimized-jon-moore-5fIoyoKlz7A-unsplash.jpg');
   background-size: cover;
-}
-
-.shelf1, .shelf2, .shelf3{
-  display: flex;
-  height: 250px;
-  border-bottom: 8px solid  rgb(106, 31, 31);
 }
 
 .book{
@@ -301,4 +302,10 @@ a:hover{
   color: ivory;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 640px){
+  .section-wrapper{
+    flex-direction: column;
+  }
 }
