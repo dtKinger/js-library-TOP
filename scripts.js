@@ -1,6 +1,3 @@
-// Bug. Need to not rely on the 15 div's to hold books
-// Instead, need to use append to add and JS to remove
-
 let authors = document.querySelectorAll('.author');
 let titles = document.querySelectorAll('.title');
 let bookCount = document.querySelector('.book-count');
