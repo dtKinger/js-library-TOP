@@ -126,17 +126,21 @@ function refreshDeleteBtns(){
 
 // Add new book objects
 
-/// Constructor
-function Book(title, author) {
-  this.title = newTitle.value;
-  this.author = newAuthor.value;
-  this.recommended = newRecommended.checked;
+/// Classes
+class Book {
+  constructor(title, author, recommended){
+    this.title = newTitle.value,
+    this.author = newAuthor.value
+    this.recommended = newRecommended.checked;
+  }
 }
 
-function BookMb(title, author) {
-  this.title = newTitleMb.value;
-  this.author = newAuthorMb.value;
-  this.recommended = newRecommendedMb.checked;
+class BookMb {
+  constructor(title, author, recommended){
+    this.title = newTitleMb.value,
+    this.author = newAuthorMb.value
+    this.recommended = newRecommendedMb.checked;
+  }
 }
 
 // Create new Book and add it to library.
@@ -159,7 +163,8 @@ addBookBtn.addEventListener('click', (e) => {
   }
 });
 
-// Duplicate for Mobile - so the inputs fields
+// I'm showing/hiding some inputs on Mobile
+// Need to Duplicate for Mobile - so the inputs fields
 // can be verified independently
 addBookMbBtn.addEventListener('click', (e) => {
   e.preventDefault();
